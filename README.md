@@ -41,6 +41,11 @@ After getting a valid return message from the hello-world image, pull the follow
      docker pull 06kellyjac/nyancat
      docker pull jeremy646/doge
 
+start static website 
+
+       [root@ip-10-0-1-85 ~]# docker run -d --name treatseekers -p 80:80 spacebones/dog                                                                                                             
+
+
 --------------------------------------------------------------------------------
 #Lab
 --------------------------------------------------------------------------------
