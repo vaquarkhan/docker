@@ -6,6 +6,15 @@ After logging into the server, install the latest version of Docker using yum.
 
      $ sudo yum -y install docker
 
+
+          [cloud_user@ip-10-0-1-219 ~]$ sudo yum -y install docker
+          [cloud_user@ip-10-0-1-219 ~]$ sudo -i
+          [root@ip-10-0-1-219 ~]# groupadd docker
+          [root@ip-10-0-1-219 ~]# usermod -aG docker cloud_user
+          [root@ip-10-0-1-219 ~]# systemctl enable --now docker
+
+
+
 enable & start docker service
 Once installation completes, enable & start the service using systemd.
 
