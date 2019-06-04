@@ -230,18 +230,25 @@ Dependency Installed:
   yajl.x86_64 0:2.0.4-4.el7
 
 Complete!
-[cloud_user@ip-10-0-1-219 ~]$ sudo -i
-[root@ip-10-0-1-219 ~]# groupadd docker
-[root@ip-10-0-1-219 ~]# usermod -aG docker cloud_user
-[root@ip-10-0-1-219 ~]# systemctl enable --now docker
+              [cloud_user@ip-10-0-1-219 ~]$ sudo -i
+              [root@ip-10-0-1-219 ~]# groupadd docker
+              [root@ip-10-0-1-219 ~]# usermod -aG docker cloud_user
+              [root@ip-10-0-1-219 ~]# systemctl enable --now docker
+              
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
-[root@ip-10-0-1-219 ~]# docker ps
+
+      [root@ip-10-0-1-219 ~]# docker ps
+      
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 [root@ip-10-0-1-219 ~]# cocker pull docker.io/hello-world
 -bash: cocker: command not found
-[root@ip-10-0-1-219 ~]# docker images
+
+         [root@ip-10-0-1-219 ~]# docker images
+         
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-[root@ip-10-0-1-219 ~]# docker run hello-world
+        
+        [root@ip-10-0-1-219 ~]# docker run hello-world
+        
 Unable to find image 'hello-world:latest' locally
 Trying to pull repository docker.io/library/hello-world ...
 latest: Pulling from docker.io/library/hello-world
@@ -270,17 +277,24 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
-[root@ip-10-0-1-219 ~]# docker ps -a
+      [root@ip-10-0-1-219 ~]# docker ps -a
+      
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
 7d36eb50dacd        hello-world         "/hello"            19 seconds ago      Exited (0) 19 seconds ago                       competent_sinoussi
-[root@ip-10-0-1-219 ~]# docker pull 06kellyjac/nyancat
+
+     [root@ip-10-0-1-219 ~]# docker pull 06kellyjac/nyancat
+     
 Using default tag: latest
 Trying to pull repository docker.io/06kellyjac/nyancat ...
 latest: Pulling from docker.io/06kellyjac/nyancat
 426d0742acee: Pull complete
 Digest: sha256:40089cdd1e2468059d009ccb42fb1b248635bccb315e2c790e7c8fa56d107d4e
 Status: Downloaded newer image for docker.io/06kellyjac/nyancat:latest
-[root@ip-10-0-1-219 ~]# docker pull jeremy646/doge
+
+
+      [root@ip-10-0-1-219 ~]# docker pull jeremy646/doge
+      
+      
 Using default tag: latest
 Trying to pull repository docker.io/jeremy646/doge ...
 latest: Pulling from docker.io/jeremy646/doge
