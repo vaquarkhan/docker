@@ -43,9 +43,9 @@ After getting a valid return message from the hello-world image, pull the follow
 
 start static website 
 
-       [root@ip-10-0-1-85 ~]# docker run -d --name treatseekers -p 80:80 spacebones/dog                                                                                                             
+      [root@ip-10-0-1-85 ~]# docker run -d --name treatseekers2 -p 88:88 spacebones/doge
 
-
+# now type server ip ini browser will see browser static website
 --------------------------------------------------------------------------------
 #Lab
 --------------------------------------------------------------------------------
