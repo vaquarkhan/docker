@@ -47,6 +47,40 @@ start static website
 
 now type server ip ini browser will see browser static website
 
+
+------------------------------------------
+
+          docker pull centos:6
+          
+Once the pull completes, start the Docker container in interactive mode, name it 'websetup'.
+
+            docker run -it --name websetup centos:6 /bin/bash
+            
+Update the system, then install Apache & Git.
+
+       yum -y update
+       yum -y install httpd git
+       
+Once installation completes, clone the content-dockerquest-spacebones repository, then copy the contents of the /doge/ subdirectory to /var/www/html.
+
+         git clone https://github.com/linuxacademy/content-dockerquest-spacebones
+         
+        cp content-dockerquest-spacebones/site /var/www/html
+        
+In order for the site to display correctly, rename the default welcome.conf file to welcome.conf.bak.
+
+       mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf.bak
+       
+Enable & start the Apache service, then exit the container environment by typing exit or hitting CTRL+C.
+
+           chkconfig httpd on && service httpd start
+           exit
+           
+Save the edited image, then pat yourself on the back for being awesome.
+
+         docker commit websetup spacebones:thewebsite
+ 
+
 --------------------------------------------------------------------------------
 #Lab
 --------------------------------------------------------------------------------
