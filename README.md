@@ -80,6 +80,15 @@ Save the edited image, then pat yourself on the back for being awesome.
 
          docker commit websetup spacebones:thewebsite
  
+ -----------------------------
+ # create postgress image 
+ 
+ 
+        docker create -v /data --name boneyard spacebones/postgres /bin/true
+        docker run -d --volumes-from boneyard --name cheese spacebones/postgres
+        docker run -d --volumes-from boneyard --name tuna spacebones/postgres
+        docker run -d --volumes-from boneyard --name bacon spacebones/postgres
+
 
 --------------------------------------------------------------------------------
 #Lab
