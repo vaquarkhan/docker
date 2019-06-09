@@ -131,4 +131,68 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service 
 
       [root@ip-10-0-1-219 ~]# docker pull jeremy646/doge
       
+      ----------------------------
+      # Lab 2
       
+      Learning Objectives
+      check_circle
+      Create the Dockerfile
+      keyboard_arrow_up
+      Create a Dockerfile:
+
+    vi Dockerfile
+    
+    The Dockerfile should contain the following:
+
+FROM node
+
+              RUN mkdir -p /var/node
+
+      ADD content-express-demo-app/ /var/node/
+      WORKDIR /var/node
+      RUN npm install
+      CMD ./bin/www
+      check_circle
+   
+    Build the Docker Image
+    keyboard_arrow_up
+     Build the Docker image:
+
+     docker build -t USERNAME/express -f Dockerfile .
+
+check_circle
+Push the Image to Docker Hub
+keyboard_arrow_up
+Login to Docker Hub:
+
+      docker login
+      
+Push the image to Docker Hub:
+
+     docker push USERNAME/express
+     
+check_circle
+Create a Demo Container
+keyboard_arrow_up
+Create the container that Watchtower will monitor:
+
+            docker run -d --name demo-app -p 80:3000 --restart always USERNAME/express
+            
+check_circle
+Create the Watchtower Container
+keyboard_arrow_up
+Create the Watchtower container that will monitor the demo-app container:
+
+         docker run -d --name watchtower --restart always -v /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower -i 30
+
+check_circle
+Update the Docker Image
+keyboard_arrow_up
+Update the Docker image:
+
+         docker build -t USERNAME/express -f Dockerfile .
+
+Repush the image to Docker Hub:
+
+     docker push USERNAME/express:latest
+
